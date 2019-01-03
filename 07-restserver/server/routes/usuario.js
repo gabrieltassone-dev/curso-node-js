@@ -15,7 +15,7 @@ app.get('/usuario', verificaToken, (req, res) => {
     let desde = req.query.desde || 0
     desde = Number(desde)
 
-    let limite = req.query.limite
+    let limite = req.query.limite || 5
     limite = Number(limite)
 
     Usuario.find({ estado: true }, 'nombre email estado')
